@@ -1,6 +1,3 @@
-/**
- * 
- */
 package beans.lists;
 
 import beans.Node;
@@ -39,22 +36,29 @@ public class SinglyLinkedList {
 	}
 
 	/**
+	 * Check if the list is empty.
+	 * 
+	 * @return if the list is empty
+	 */
+	public boolean isEmpty() {
+		return (this.size == 0) ? true : false;
+	}
+
+	/**
 	 * Insert a node to the end of the linkedList.
 	 * 
-	 * @param linkedList
 	 * @param data
-	 * @return
 	 */
-	public SinglyLinkedList add(SinglyLinkedList linkedList, Object data) {
+	public void add(Object data) {
 		Node nodeToInsert = new Node(data);
 
 		// List is empty.
-		if (linkedList.getHead() == null) {
-			linkedList.setHead(nodeToInsert);
+		if (isEmpty()) {
+			head = nodeToInsert;
 			this.size = 1;
 		} else {
 			// Add new node to the last one.
-			Node last = linkedList.getHead();
+			Node last = head;
 
 			while (last.getNext() != null) {
 				last = last.getNext();
@@ -63,49 +67,40 @@ public class SinglyLinkedList {
 			last.setNext(nodeToInsert);
 			this.size++;
 		}
-		return linkedList;
 	}
 
 	/**
 	 * Insert a node at the beginning of the linkedList.
 	 * 
-	 * @param linkedList
 	 * @param data
-	 * @return
 	 */
-	public SinglyLinkedList push(SinglyLinkedList linkedList, Object data) {
+	public void push(Object data) {
 		Node nodeToInsert = new Node(data);
 
 		if (size == 0) {
-			linkedList.setHead(nodeToInsert);
+			head = nodeToInsert;
 		} else {
 			nodeToInsert.setNext(head);
-			linkedList.setHead(nodeToInsert);
+			head = nodeToInsert;
 		}
 		this.size++;
-
-		return linkedList;
 	}
 
 	/**
 	 * Delete a node on the linkedList by a key.
 	 * 
-	 * @param linkedList
 	 * @param key
-	 * @return
 	 */
-	public SinglyLinkedList deleteByKey(SinglyLinkedList linkedList, Object key) {
+	public void deleteByKey(Object key) {
 
-		Node currentNode = linkedList.head;
+		Node currentNode = head;
 		Node prevNode = null;
 
 		// CASE 1: Key in the head
 		if (currentNode != null && currentNode.getData() == key) {
-			linkedList.head = currentNode.getNext();
+			head = currentNode.getNext();
 			this.size--;
 			// System.out.println(key + " found and deleted");
-
-			return linkedList;
 		}
 
 		// CASE 2: key in the middle or end.
@@ -125,7 +120,6 @@ public class SinglyLinkedList {
 			// Display the message
 			System.out.println(key + " not found.");
 		}
-		return linkedList;
 	}
 
 	/**

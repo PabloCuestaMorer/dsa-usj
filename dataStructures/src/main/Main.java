@@ -3,7 +3,9 @@
  */
 package main;
 
-import beans.lists.SinglyLinkedList;
+import java.util.Arrays;
+
+import beans.lists.Stack;
 
 /**
  * @author pablo
@@ -16,20 +18,20 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		SinglyLinkedList list = new SinglyLinkedList();
-		// Test print empty list.
-		list.printListItems();
-
-		list.add('A');
-		list.add('B');
-		list.add('C');
-		list.add('D');
-		System.out.println("Test: insert");
-		list.printListItems();
-
-		System.out.println("\nTest: deleteByKey");
-		list.deleteByKey('B');
-		list.printListItems();
+//		SinglyLinkedList list = new SinglyLinkedList();
+//		// Test print empty list.
+//		list.printListItems();
+//
+//		list.add('A');
+//		list.add('B');
+//		list.add('C');
+//		list.add('D');
+//		System.out.println("Test: insert");
+//		list.printListItems();
+//
+//		System.out.println("\nTest: deleteByKey");
+//		list.deleteByKey('B');
+//		list.printListItems();
 
 //		System.out.println("\nTest: push");
 //		list.push('B');
@@ -56,7 +58,7 @@ public class Main {
 //		doubleLinkedList.remove("B");
 //		doubleLinkedList.printListForwards();
 //		System.out.println(doubleLinkedList.contains("A"));
-		
+
 //		CircularSinglyLinkedList list = new CircularSinglyLinkedList();
 //		list.insert("A");
 //		list.insert("B");
@@ -66,7 +68,12 @@ public class Main {
 //		list.insertAfter("x", "A");
 //		
 //		list.printList();
-		
+
+		Stack stack = new Stack(4);
+		stack.add("a");
+		stack.add("b");
+		System.out.println(Arrays.toString(stack.getArr()));
+
 	}
 
 }

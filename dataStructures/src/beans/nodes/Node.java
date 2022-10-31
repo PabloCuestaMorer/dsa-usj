@@ -1,7 +1,7 @@
 /**
  * 
  */
-package beans;
+package beans.nodes;
 
 /**
  * @author pablo

@@ -3,7 +3,7 @@
  */
 package beans.lists;
 
-import beans.Node;
+import beans.nodes.Node;
 
 /**
  * @author pablo

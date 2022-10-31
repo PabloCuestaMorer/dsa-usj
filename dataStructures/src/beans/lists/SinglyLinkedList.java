@@ -1,27 +1,20 @@
 package beans.lists;
 
-import beans.Node;
+import beans.nodes.Node;
 
 /**
  * @author pablo
  *
  */
 
-/*
- * TO DO:
- */
-//	insertHead(Object)				DONE		
-//	insertLast(Object)				DONE
-//	insertAfter(Object int)
-//	insertAfter(Object object)
-//	contains(Object)
-//	clear()							DONE
-
 public class SinglyLinkedList {
 
 	private int size;
 	private Node head;
 
+	/**
+	 * Constructor that builds an empty single linked list 
+	 */
 	public SinglyLinkedList() {
 		this.size = 0;
 		this.head = null;
@@ -38,7 +31,7 @@ public class SinglyLinkedList {
 	/**
 	 * Check if the list is empty.
 	 * 
-	 * @return if the list is empty
+	 * @return boolean if the list is empty
 	 */
 	public boolean isEmpty() {
 		return (this.size == 0) ? true : false;
@@ -77,7 +70,7 @@ public class SinglyLinkedList {
 	public void push(Object data) {
 		Node nodeToInsert = new Node(data);
 
-		if (size == 0) {
+		if (isEmpty()) {
 			head = nodeToInsert;
 		} else {
 			nodeToInsert.setNext(head);
@@ -127,7 +120,7 @@ public class SinglyLinkedList {
 	 */
 	public void printListItems() {
 
-		if (size == 0) {
+		if (isEmpty()) {
 			System.out.println("The linkedList is empty.");
 		} else {
 			Node currentNode = head;

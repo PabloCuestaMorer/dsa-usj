@@ -1,6 +1,6 @@
 package beans.lists;
 
-import beans.DoubleNode;
+import beans.nodes.DoubleNode;
 
 /**
  * @author pablo

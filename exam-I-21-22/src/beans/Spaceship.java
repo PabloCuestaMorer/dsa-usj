@@ -23,12 +23,16 @@ public class Spaceship {
 	 * @param baseForce
 	 * @param state
 	 */
-	public Spaceship(String name, String type, int baseForce, int state) {
+	public Spaceship(String name, String type, int baseForce) {
 		this.name = name;
 		this.type = type;
 		this.baseForce = baseForce;
-		this.state = state;
 		this.components = new ArrayStack(4);
+	}
+	
+	public void addComponent(String type, int baseForce) {
+		Component component = new Component(type, baseForce);
+		this.components.push(component);
 	}
 
 	/**

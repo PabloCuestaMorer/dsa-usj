@@ -31,7 +31,7 @@ public class LinkedStack {
 	 */
 	public void push(Object data) {
 		Node newNode = new Node(data);
-		newNode.setNext(peak);
+		newNode.setNext(null);
 		peak = newNode;
 		size++;
 	}

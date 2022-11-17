@@ -16,6 +16,7 @@ public class Node {
 	 */
 	public Node(Object data) {
 		this.data = data;
+		//next null by default
 	}
 
 	/**

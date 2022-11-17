@@ -44,7 +44,7 @@ public class ArrayStack {
 	
 	/**
 	 * Method used to retrieve the peak element of the ArrayStack without removing it
-	 * @return Object the peak, null if is empty
+	 * @return El objeto en la cima de la PilaArray, null si est� vac�a
 	 */
 	public Object peek()
 	{

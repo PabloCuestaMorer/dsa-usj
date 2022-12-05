@@ -14,6 +14,10 @@ public class Main {
 		System.out.println("Array before sorting: ");
 		printArray(arr);
 
+//		**** BUBBLE ****
+//		BubbleSort bubbleSort = new BubbleSort();
+//		bubbleSort.recursiveSort(arr, arr.length);
+
 //		**** INSERTION ****
 //		InsertionSort algorithm = new InsertionSort();
 //		algorithm.sort(arr);

@@ -1,5 +1,7 @@
 package main;
 
+import beans.MergeSort;
+
 /**
  * @author pablo
  *
@@ -25,6 +27,10 @@ public class Main {
 //		**** SHELL ****
 //		ShellSort algorithm = new ShellSort();
 //		algorithm.sort(arr);
+
+//		**** MERGE SORT ****
+		MergeSort algorithm = new MergeSort();
+		algorithm.sort(arr, arr.length);
 
 		System.out.println("Array after sorting: ");
 		printArray(arr);

@@ -1,6 +1,6 @@
 package main;
 
-import beans.MergeSort;
+import beans.QuickSort;
 
 /**
  * @author pablo
@@ -29,8 +29,12 @@ public class Main {
 //		algorithm.sort(arr);
 
 //		**** MERGE SORT ****
-		MergeSort algorithm = new MergeSort();
-		algorithm.sort(arr, arr.length);
+//		MergeSort algorithm = new MergeSort();
+//		algorithm.sort(arr, arr.length);
+
+//		**** QUICK SORT LL ****
+		QuickSort quickSort = new QuickSort();
+		quickSort.sort(arr, 0, arr.length - 1);
 
 		System.out.println("Array after sorting: ");
 		printArray(arr);

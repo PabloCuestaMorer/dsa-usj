@@ -1,6 +1,7 @@
 package main;
 
-import beans.QuickSort;
+import beans.ShellSort;
+import beans.ShellSortV2;
 
 /**
  * @author pablo
@@ -26,15 +27,16 @@ public class Main {
 
 //		**** SHELL ****
 //		ShellSort algorithm = new ShellSort();
-//		algorithm.sort(arr);
+		ShellSortV2 algorithm = new ShellSortV2();
+		algorithm.sort(arr);
 
 //		**** MERGE SORT ****
 //		MergeSort algorithm = new MergeSort();
 //		algorithm.sort(arr, arr.length);
 
 //		**** QUICK SORT LL ****
-		QuickSort quickSort = new QuickSort();
-		quickSort.sort(arr, 0, arr.length - 1);
+//		QuickSort quickSort = new QuickSort();
+//		quickSort.sort(arr, 0, arr.length - 1);
 
 		System.out.println("Array after sorting: ");
 		printArray(arr);

@@ -49,7 +49,8 @@ public class Main {
 			System.out.println("(" + district.getId() + ") " + district.getCity() + ": número de paquetes ["
 					+ district.getNumPackages() + "], prioritario [" + priority + "]");
 		}
-		System.out.println("Sorting time: " + totalTime / 1000.0 + " microseconds");
+		System.out.println();
+		System.out.println("Sorting time: " + totalTime / 1000000.0 + " miliseconds");
 	}
 
 }

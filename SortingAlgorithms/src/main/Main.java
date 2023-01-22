@@ -53,7 +53,7 @@ public class Main {
 
 		System.out.println("Array after sorting: ");
 		printArray(arr);
-		System.out.println("Sorting time: " + totalTime / 1000.0 + " microseconds");
+		System.out.println("Sorting time: " + totalTime / 1000000.0 + " miliseconds");
 
 	}
 

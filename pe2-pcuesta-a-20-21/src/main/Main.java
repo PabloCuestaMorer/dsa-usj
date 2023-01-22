@@ -1,7 +1,6 @@
 package main;
 
 import beans.HashMap;
-import beans.ShellSort;
 import beans.ShellSortV2;
 import beans.Student;
 
@@ -33,9 +32,8 @@ public class Main {
 		Student[] students = { student1, student2, student3, student4, student5 };
 
 		// sort the array of students by average grade
-//		ShellSort shellSort = new ShellSort();
-		ShellSortV2 shellSort = new ShellSortV2();
-		shellSort.sort(students);
+		ShellSortV2<Student> shellSort = new ShellSortV2<>();
+		shellSort.sort(students, Student.BY_AVERAGE_GRADE);
 
 		// generate a list
 		for (int i = 0; i < students.length; i++) {

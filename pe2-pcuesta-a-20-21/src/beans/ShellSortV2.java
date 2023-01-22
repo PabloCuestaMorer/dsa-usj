@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.Comparator;
+
 /**
  * The ShellSort class provides an implementation of the Shell sort algorithm
  * for sorting integer arrays. This algorithm is an efficient variation of the
@@ -13,14 +15,14 @@ package beans;
  * @author Pablo Cuesta Morer
  * @date 2023-01-21
  */
-public class ShellSortV2 {
+public class ShellSortV2<T> {
 
 	/**
 	 * Sort an integer array using Shell sort algorithm
 	 *
 	 * @param arr the array to be sorted
 	 */
-	public void sort(Student arr[]) {
+	public void sort(T arr[], Comparator<T> comparator) {
 		int n = arr.length;
 
 		int[] gaps = { 701, 301, 132, 57, 23, 10, 4, 1 }; // Ciura gap sequence
@@ -31,12 +33,12 @@ public class ShellSortV2 {
 			// Iterate the gap
 			for (int i = gap; i < n; i++) {
 				// save a[i] in temp and make a hole at position i
-				Student temp = arr[i];
+				T temp = (T) arr[i];
 
 				// Insertion sort for each gap
 				// DESCENDING version (<)
 				int j = i;
-				while (j >= gap && arr[j - gap].getAverageGrade() < temp.getAverageGrade()) {
+				while (j >= gap && comparator.compare(arr[j - gap], temp) < 0) {
 					arr[j] = arr[j - gap];
 					j -= gap;
 				}

@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.Comparator;
+
 /**
  * @author Pablo Cuesta Morer
  * @date 2023-01-21
@@ -26,8 +28,7 @@ public class Student {
 	 * @param surname
 	 * @param averageGrade
 	 */
-	public Student(String id, String name, String surname,
-			double averageGrade) {
+	public Student(String id, String name, String surname, double averageGrade) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
@@ -42,8 +43,7 @@ public class Student {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -57,8 +57,7 @@ public class Student {
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -72,8 +71,7 @@ public class Student {
 	}
 
 	/**
-	 * @param surname
-	 *            the surname to set
+	 * @param surname the surname to set
 	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
@@ -87,13 +85,12 @@ public class Student {
 	}
 
 	/**
-	 * @param averageGrade
-	 *            the averageGrade to set
+	 * @param averageGrade the averageGrade to set
 	 */
 	public void setAverageGrade(double averageGrade) {
 		this.averageGrade = averageGrade;
 	}
-	
+
 	/**
 	 * @return the isActive
 	 */
@@ -108,10 +105,17 @@ public class Student {
 		this.isActive = isActive;
 	}
 
+	public static final Comparator<Student> BY_AVERAGE_GRADE = new ByAverageGrade();
+
+	private static class ByAverageGrade implements Comparator<Student> {
+		public int compare(Student s1, Student s2) {
+			return Double.compare(s1.getAverageGrade(), s2.getAverageGrade());
+		}
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", surname=" + surname
-				+ ", averageGrade=" + averageGrade + "]";
+		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", averageGrade=" + averageGrade + "]";
 	}
 
 }

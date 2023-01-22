@@ -46,10 +46,14 @@ public class Main {
 //		**** QUICK SORT LL ****
 //		QuickSort quickSort = new QuickSort();
 		QuickSortV2 quickSort = new QuickSortV2();
+		long startTime = System.nanoTime();
 		quickSort.sort(arr, 0, arr.length - 1);
+		long endTime = System.nanoTime();
+		long totalTime = endTime - startTime;
 
 		System.out.println("Array after sorting: ");
 		printArray(arr);
+		System.out.println("Sorting time: " + totalTime / 1000.0 + " microseconds");
 
 	}
 

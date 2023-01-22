@@ -37,7 +37,10 @@ public class Main {
 		District[] districts = { district1, district2, district3, district4 };
 		// Sort the array of Districts ASC
 		QuickSort<District> quickSort = new QuickSort<>();
+		long startTime = System.nanoTime();
 		quickSort.sort(districts, 0, districts.length - 1, District.BY_NUM_PACKAGES);
+		long endTime = System.nanoTime();
+		long totalTime = endTime - startTime;
 		// Iterate through the sorted array of Districts and print out information
 		for (int i = 0; i < districts.length; i++) {
 			District district = districts[i];
@@ -46,7 +49,7 @@ public class Main {
 			System.out.println("(" + district.getId() + ") " + district.getCity() + ": número de paquetes ["
 					+ district.getNumPackages() + "], prioritario [" + priority + "]");
 		}
-
+		System.out.println("Sorting time: " + totalTime / 1000.0 + " microseconds");
 	}
 
 }
